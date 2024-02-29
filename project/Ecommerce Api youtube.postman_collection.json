@@ -1,0 +1,640 @@
+{
+	"info": {
+		"_postman_id": "91a1d36a-e5a1-4bd4-a0cb-7e158aea4c9c",
+		"name": "Ecommerce Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sing Up",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"vinayak\",\r\n    \"lastName\":\"Zarmariya\",\r\n    \"email\":\"vinayak@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5454/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign In",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vinayak@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5454/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Address",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ6b3MgYWNhZGVteSIsInN1YiI6IkpXVCBUb2tlbiIsInVzZXJuYW1lIjoidmluYXlha0BnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IiIsImlhdCI6MTY3NjcwMDY2NiwiZXhwIjoxNjc3MTAwNjY2fQ.dkR0Hx7oJzV5hCA4AKR7C9HXihOZjf4TZSIRyHhxTAI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"state\":\"Gujarat\",\r\n    \"city\":\"Ahemdabad\",\r\n    \"pincode\":\"36001\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5454/user/new_address/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"user",
+						"new_address",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Post",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE2ODQ0MTg5ODksImV4cCI6MTY4NDUwNTM4OSwiZW1haWwiOiJ2YWtocmFuQGdtYWlsLmNvbSJ9.UMG4md3YflC4p_cthJg966TpxQPi5honbVscnio0YnfBxAPOYX2dWcN2lXpSTYUS",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Women's Cotton Kurti 2\",\r\n  \"description\": \"This beautiful cotton kurti is perfect for any occasion. Made from high-quality materials, it is comfortable, stylish, and affordable.\",\r\n  \"price\": 799.99,\r\n  \"discountedPrice\": 699.99,\r\n  \"discountPersent\": 12,\r\n  \"quantity\": 100,\r\n  \"brand\": \"ABC\",\r\n  \"color\": \"Blue\",\r\n  \"size\": [\r\n    {\r\n      \"name\": \"S\",\r\n      \"quantity\": 20\r\n    },\r\n    {\r\n      \"name\": \"M\",\r\n      \"quantity\": 30\r\n    },\r\n    {\r\n      \"name\": \"L\",\r\n      \"quantity\": 50\r\n    }\r\n  ],\r\n  \"imageUrl\": \"https://example.com/image.png\",\r\n  \"topLavelCategory\": \"Women\",\r\n  \"secondLavelCategory\": \"Clothing\",\r\n  \"thirdLavelCategory\": \"Dress\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5454/api/admin/products/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"admin",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE2ODM3OTQ1MTcsImV4cCI6MTY4Mzg4MDkxNywiZW1haWwiOiJ2YWtocmFuQGdtYWlsLmNvbSJ9.RVQcHitgbeiEk-unULel9I1avkYVmq-89HlXmst86CwDLapYDipZGN07qTzVxLff",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5454/api/users/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Product",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "search product",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get all product",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "find product by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE2ODM3MDQ1MjEsImV4cCI6MTY4Mzc5MDkyMSwiZW1haWwiOiJ2aW5heWFrQGdtYWlsLmNvbSJ9.3UiUdr7itCOdfcIVGcLp_PAty1WLCt5SHgIOYQOfpMuotnKfnjQT_yJ0aCcp5fZU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5454/api/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add item to cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE2ODM3ODI0OTcsImV4cCI6MTY4Mzg2ODg5NywiZW1haWwiOiJ2YWtocmFuQGdtYWlsLmNvbSJ9.keIUjIFCL-RmJu_NHDwa1OIGdmudDtuOcTkR9e6GgPXE077wfdewwGndqUfP6rth",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\":1,\r\n    \"size\":\"S\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5454/api/cart/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"cart",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE2ODQwNjE3MzYsImV4cCI6MTY4NDE0ODEzNiwiZW1haWwiOiJ2YWtocmFuQGdtYWlsLmNvbSJ9.L61pI2quCgtNHs8pkejSi72MmMHqyiE5B8yKL7OwV60Gxu9C83gXWULF1mO_rsl5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5454/api/cart/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"cart",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Cart Item",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "update cartitem",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE2ODM3OTQ1MTcsImV4cCI6MTY4Mzg4MDkxNywiZW1haWwiOiJ2YWtocmFuQGdtYWlsLmNvbSJ9.RVQcHitgbeiEk-unULel9I1avkYVmq-89HlXmst86CwDLapYDipZGN07qTzVxLff",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"quantity\":3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5454/api/cart_items/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"cart_items",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE2ODM3OTQ1MTcsImV4cCI6MTY4Mzg4MDkxNywiZW1haWwiOiJ2YWtocmFuQGdtYWlsLmNvbSJ9.RVQcHitgbeiEk-unULel9I1avkYVmq-89HlXmst86CwDLapYDipZGN07qTzVxLff",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstName\": \"Vakhran\",\r\n  \"lastName\": \"Doe\",\r\n  \"streetAddress\": \"123 Main St\",\r\n  \"city\": \"Anytown\",\r\n  \"state\": \"CA\",\r\n  \"zipCode\": \"12345\",\r\n  \"mobile\": \"555-555-1234\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5454/api/orders/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"orders",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create payment link",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE2ODM3OTQ1MTcsImV4cCI6MTY4Mzg4MDkxNywiZW1haWwiOiJ2YWtocmFuQGdtYWlsLmNvbSJ9.RVQcHitgbeiEk-unULel9I1avkYVmq-89HlXmst86CwDLapYDipZGN07qTzVxLff",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5454/api/payments/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"payments",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch paymnet details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE2ODM3OTQ1MTcsImV4cCI6MTY4Mzg4MDkxNywiZW1haWwiOiJ2YWtocmFuQGdtYWlsLmNvbSJ9.RVQcHitgbeiEk-unULel9I1avkYVmq-89HlXmst86CwDLapYDipZGN07qTzVxLff",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5454/api/payments/pay_LodIH9EjCig5re",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"payments",
+						"pay_LodIH9EjCig5re"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Users Order History",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE2ODM3OTQ1MTcsImV4cCI6MTY4Mzg4MDkxNywiZW1haWwiOiJ2YWtocmFuQGdtYWlsLmNvbSJ9.RVQcHitgbeiEk-unULel9I1avkYVmq-89HlXmst86CwDLapYDipZGN07qTzVxLff",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5454/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find order by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE2ODM3OTQ1MTcsImV4cCI6MTY4Mzg4MDkxNywiZW1haWwiOiJ2YWtocmFuQGdtYWlsLmNvbSJ9.RVQcHitgbeiEk-unULel9I1avkYVmq-89HlXmst86CwDLapYDipZGN07qTzVxLff",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5454/api/orders/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"orders",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE2ODQ0MTg5ODksImV4cCI6MTY4NDUwNTM4OSwiZW1haWwiOiJ2YWtocmFuQGdtYWlsLmNvbSJ9.UMG4md3YflC4p_cthJg966TpxQPi5honbVscnio0YnfBxAPOYX2dWcN2lXpSTYUS",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/l5h2xe80/kurta/x/6/n/xl-kast-tile-green-majestic-man-original-imagg4z33hu4kzpv.jpeg?q=70\",\r\n        \"brand\": \"Majestic Man\",\r\n        \"title\": \"Men Printed Pure Cotton Straight Kurta\",\r\n        \"color\": \"Green\",\r\n        \"discountedPrice\": 499,\r\n        \"price\": 1499,\r\n        \"discountPersent\": 66,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/l/f/r/xl-k-spl668-yellow-sg-leman-original-imagznqcrahgq9rf.jpeg?q=70\",\r\n        \"brand\": \"SG LEMAN\",\r\n        \"title\": \"Men Embroidered Jacquard Straight Kurta\",\r\n        \"color\": \"Yellow\",\r\n        \"discountedPrice\": 799,\r\n        \"price\": 2499,\r\n        \"discountPersent\": 68,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/g/6/k/m-sksh-dt1105-pcbl-fubar-original-imafux247zhqym2z-bb.jpeg?q=70\",\r\n        \"brand\": \"FUBAR\",\r\n        \"title\": \"Men Printed Cotton Blend Straight Kurta\",\r\n        \"color\": \"Blue\",\r\n        \"discountedPrice\": 399,\r\n        \"price\": 1499,\r\n        \"discountPersent\": 73,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/i/v/x/xxl-br-ad-kt-105-adwyn-peter-original-imagj4zyd2q7t6cg.jpeg?q=70\",\r\n        \"brand\": \"ALY JOHN\",\r\n        \"title\": \"Men Solid Pure Cotton Straight Kurta\",\r\n        \"color\": \"White\",\r\n        \"discountedPrice\": 474,\r\n        \"price\": 1999,\r\n        \"discountPersent\": 76,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/j/a/r/l-poch521835-peter-england-original-imag7jg47g7cxhg3-bb.jpeg?q=70\",\r\n        \"brand\": \"PETER ENGLAND\",\r\n        \"title\": \"Men Woven Design Pure Cotton Straight Kurta\",\r\n        \"color\": \"Grey\",\r\n        \"discountedPrice\": 524,\r\n        \"price\": 1049,\r\n        \"discountPersent\": 50,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/y/c/x/xl-kast107hp-majestic-man-original-imafw49u5uty4agx-bb.jpeg?q=70\",\r\n        \"brand\": \"Majestic Man\",\r\n        \"title\": \"Men Solid Pure Cotton Straight Kurta\",\r\n        \"color\": \"Pink\",\r\n        \"discountedPrice\": 499,\r\n        \"price\": 1499,\r\n        \"discountPersent\": 66,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/kpodocw0/t-shirt/x/o/4/xl-wr-64-wrodss-original-imag3upwgq9n9fbv.jpeg?q=70\",\r\n        \"brand\": \"WRODSS\",\r\n        \"title\": \"Men Solid Cotton Blend Straight Kurta\",\r\n        \"color\": \"Black\",\r\n        \"discountedPrice\": 277,\r\n        \"price\": 999,\r\n        \"discountPersent\": 72,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/l4zxn680/kurta/i/g/u/s-mtml0039-341-manthan-original-imagfrz3gwgdtczm.jpeg?q=70\",\r\n        \"brand\": \"Manthan\",\r\n        \"title\": \"Men Printed Cotton Blend Straight Kurta\",\r\n        \"color\": \"Blue\",\r\n        \"discountedPrice\": 765,\r\n        \"price\": 1049,\r\n        \"discountPersent\": 27,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/m/e/e/s-kurta-rahul-look-original-imaga2g6qmhbywdf-bb.jpeg?q=70\",\r\n        \"brand\": \"RAHUL LOOK\",\r\n        \"title\": \"Men Solid Pure Cotton Straight Kurta\",\r\n        \"color\": \"Green\",\r\n        \"discountedPrice\": 499,\r\n        \"price\": 1599,\r\n        \"discountPersent\": 68,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/u/v/m/l-grey-106-yellow-freluro-original-imagc26vdpwxgztu-bb.jpeg?q=70\",\r\n        \"brand\": \"FRELURO\",\r\n        \"title\": \"Men Printed Cotton Blend Straight Kurta\",\r\n        \"color\": \"Yellow\",\r\n        \"discountedPrice\": 429,\r\n        \"price\": 999,        \r\n        \"discountPersent\": 57,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/jsj90280/kurta/j/z/g/l-mtmkos0004-326-manthan-original-imafe35wha5ry36p.jpeg?q=70\",\r\n        \"brand\": \"Manthan\",\r\n        \"title\": \"Men Self Design Cotton Blend Straight Kurta\",\r\n        \"color\": \"Light Blue\",\r\n        \"discountedPrice\": 729,\r\n        \"price\": 909,        \r\n        \"discountPersent\": 27,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/g/f/f/xl-grey-sws4503-allan-peter-original-imag6xxgvvh59gh5-bb.jpeg?q=70\",\r\n        \"brand\": \"allan peter\",\r\n        \"title\": \"Men Solid Pure Cotton Straight Kurta\",\r\n        \"color\": \"Green\",\r\n        \"discountedPrice\": 449,\r\n        \"price\": 1749,\r\n        \"discountPersent\": 74,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/u/g/z/xl-8button-kurta-elepants-original-imagk57kfg2bwvhd.jpeg?q=70\",\r\n        \"brand\": \"COMBRAIDED\",\r\n        \"title\": \"Men Solid Cotton Blend Straight Kurta\",\r\n        \"color\": \"Dark Blue\",\r\n        \"discountedPrice\": 449,\r\n        \"price\": 1499,\r\n        \"discountPersent\": 70,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/7/b/q/xl-short-button-yellow-101-deal4mens-original-imagf6nzhwufyygg.jpeg?q=70\",\r\n        \"brand\": \"FOLGEN\",\r\n        \"title\": \"Men Solid Cotton Blend Straight Kurta\",\r\n        \"color\": \"Yellow\",\r\n        \"discountedPrice\": 385,\r\n        \"price\": 1299,\r\n        \"discountPersent\": 70,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/l3lx8cw0/kurta/d/o/m/l-kurta-mr-button-tap-in-original-imagezztuysgufsh.jpeg?q=70\",\r\n        \"brand\": \"Tap in\",\r\n        \"title\": \"Men Solid Cotton Blend Straight Kurta\",\r\n        \"color\": \"Orange\",\r\n        \"discountedPrice\": 395,\r\n        \"price\": 1495,\r\n        \"discountPersent\": 73,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/a/m/4/xl-sksh-dt1105-navy-fubar-original-imafuyzzh7fx6kaw-bb.jpeg?q=70\",\r\n        \"brand\": \"FUBAR\",\r\n        \"title\": \"Men Printed Cotton Blend Straight Kurta\",\r\n        \"color\": \"Dark Blue\",\r\n        \"discountedPrice\": 399,\r\n        \"price\": 1648,\r\n        \"discountPersent\": 75,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/7/m/3/xxl-vlsd-a0ltpk-vida-loca-original-imagk5ggvxf97dwz.jpeg?q=70\",\r\n        \"brand\": \"Vida Loca\",\r\n        \"title\": \"Men Solid Pure Cotton Straight Kurta\",\r\n        \"color\": \"White\",\r\n        \"discountedPrice\": 599,\r\n        \"price\": 2499,\r\n        \"discountPersent\": 76,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/kxkqavk0/kurta/l/w/t/xxl-vlsd-a0lt-vida-loca-original-imagay8hcrqax2uv.jpeg?q=70\",\r\n        \"brand\": \"Vida Loca\",\r\n        \"title\": \"Men Self Design Pure Cotton Straight Kurta\",\r\n        \"color\": \"White\",\r\n        \"discountedPrice\": 629,\r\n        \"price\": 2499,\r\n        \"discountPersent\": 74,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/n/p/q/xxl-white-kurta-lilen-spoque-original-imagnk2zzcgqst3r.jpeg?q=70\",\r\n        \"brand\": \"Nofilter\",\r\n        \"title\": \"Men Solid Pure Cotton Straight Kurta\",\r\n        \"color\": \"White\",\r\n        \"discountedPrice\": 370,\r\n        \"price\": 1499,\r\n        \"discountPersent\": 75,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/l/9/r/xxl-ksh-p-kurta-yellow-ksh-trendz-original-imafyq4h7q5gpkzk-bb.jpeg?q=70\",\r\n        \"brand\": \"KSH Trendz\",\r\n        \"title\": \"Men Solid Cotton Blend Straight Kurta\",\r\n        \"color\": \"Yellow\",\r\n        \"discountedPrice\": 363,\r\n        \"price\": 1499,\r\n        \"discountPersent\": 75,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/kxkqavk0/kurta/c/p/f/xxl-vlsd-a0lt-vida-loca-original-imagay8hjdc9cdzh.jpeg?q=70\",\r\n        \"brand\": \"Vida Loca\",\r\n        \"title\": \"Men Self Design Pure Cotton Straight Kurta\",\r\n        \"color\": \"Beige\",\r\n        \"discountedPrice\": 629,\r\n        \"price\": 2499,\r\n        \"discountPersent\": 74,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/5/w/o/l-vlsd-a0lt-vida-loca-original-imagay8hg3nydjuh-bb.jpeg?q=70\",\r\n        \"brand\": \"Vida Loca\",\r\n        \"title\": \"Men Self Design Pure Cotton Straight Kurta\",\r\n        \"color\": \"Light Blue\",\r\n        \"discountedPrice\": 629,\r\n        \"price\": 2499,\r\n        \"discountPersent\": 74,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/v/7/w/xl-sksh-dt1105-pur-fubar-original-imafuy3z57uqgdrp-bb.jpeg?q=70\",\r\n        \"brand\": \"FUBAR\",\r\n        \"title\": \"Men Printed Cotton Blend Straight Kurta\",\r\n        \"color\": \"Purple\",\r\n        \"discountedPrice\": 399,\r\n        \"price\": 1648,\r\n        \"discountPersent\": 75,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/kfpq5jk0-0/kurta/e/g/i/m-kast109pp-majestic-man-original-imafw49u8vyzygpn.jpeg?q=70\",\r\n        \"brand\": \"Majestic Man\",\r\n        \"title\": \"Men Solid Pure Cotton Straight Kurta\",\r\n        \"color\": \"Pink\",\r\n        \"discountedPrice\": 499,\r\n        \"price\": 1499,\r\n        \"discountPersent\": 66,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/y/r/m/xxs-sada-plain-kurta-ksh-trendz-original-imag4baggdt7txju-bb.jpeg?q=70\",\r\n        \"brand\": \"KSH Trendz\",\r\n        \"title\": \"Men Solid Cotton Blend Straight Kurta\",\r\n        \"color\": \"Yellow\",\r\n        \"discountedPrice\": 265,\r\n        \"price\": 1499,\r\n        \"discountPersent\": 82,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/t/g/w/xxl-ae08sk42-blue-aew-designs-original-imagg8npatfky9wg.jpeg?q=70\",\r\n        \"brand\": \"ARMAAN ETHNIC\",\r\n        \"title\": \"Men Self Design Cotton Blend Straight Kurta\",\r\n        \"color\": \"Blue\",\r\n        \"discountedPrice\": 483,\r\n        \"price\": 1999,\r\n        \"discountPersent\": 75,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/b/0/5/m-kast-fern-lit-green-majestic-man-original-imagzrafzhtbnz7s.jpeg?q=70\",\r\n        \"brand\": \"Majestic Man\",\r\n        \"title\": \"Men Printed Pure Cotton Straight Kurta\",\r\n        \"color\": \"Light Green\",\r\n        \"discountedPrice\": 499,\r\n        \"price\": 1499,\r\n        \"discountPersent\": 66,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/e/o/4/m-kast-hukum-orange-majestic-man-original-imagzra2fzadkyrz.jpeg?q=70\",\r\n        \"brand\": \"Majestic Man\",\r\n        \"title\": \"Men Printed Pure Cotton Straight Kurta\",\r\n        \"color\": \"Orange\",\r\n        \"discountedPrice\": 499,\r\n        \"price\": 1499,\r\n        \"discountPersent\": 66,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/s/p/a/l-kcsh-krt-103-mao-fubar-original-imag7fpesvngbwyy-bb.jpeg?q=70\",\r\n        \"brand\": \"FUBAR\",\r\n        \"title\": \"Men Printed Cotton Blend Straight Kurta\",\r\n        \"color\": \"Maroon\",\r\n        \"discountedPrice\": 399,\r\n        \"price\": 1648,\r\n        \"discountPersent\": 75,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/8/u/r/xl-sws2701-allan-peter-original-imafvxcfcsg4dzab-bb.jpeg?q=70\",\r\n        \"brand\": \"allan peter\",\r\n        \"title\": \"Men Solid Pure Cotton Straight Kurta\",\r\n        \"color\": \"Pink\",\r\n        \"discountedPrice\": 449,\r\n        \"price\": 1749,\r\n        \"discountPersent\": 74,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/x/u/y/s-smpl04-deemoon-original-imagk5mnr9ufeha2.jpeg?q=70\",\r\n        \"brand\": \"DEEMOON\",\r\n        \"title\": \"Men Floral Print Cotton Blend Straight Kurta\",\r\n        \"color\": \"Dark Blue\",\r\n        \"discountedPrice\": 468,\r\n        \"price\": 1599,\r\n        \"discountPersent\": 70,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/z/l/b/xl-grey-sws2902-allan-peter-original-imag3y6tzaaxwkhy-bb.jpeg?q=70\",\r\n        \"brand\": \"allan peter\",\r\n        \"title\": \"Men Printed Pure Cotton Straight Kurta\",\r\n        \"color\": \"Dark Blue\",\r\n        \"discountedPrice\": 499,\r\n        \"price\": 1749,\r\n        \"discountPersent\": 71,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/e/j/j/l-jcardkurta-yellow-divra-clothing-original-imaggjhfgjqhuwtk.jpeg?q=70\",\r\n        \"brand\": \"More & More\",\r\n        \"title\": \"Men Self Design Cotton Blend Straight Kurta\",\r\n        \"color\": \"Yellow\",\r\n        \"discountedPrice\": 467,\r\n        \"price\": 2199,\r\n        \"discountPersent\": 78,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/o/u/d/s-up-kurta-31035-phone-sg-leman-original-imagzu7tgzgtmnvb.jpeg?q=70\",\r\n        \"brand\": \"SG LEMAN\",\r\n        \"title\": \"Men Printed Pure Silk Straight Kurta\",\r\n        \"color\": \"Gold\",\r\n        \"discountedPrice\": 810,\r\n        \"price\": 2499,\r\n        \"discountPersent\": 67,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/kybvo280/kurta/v/i/i/xxl-aly2502-aly-john-original-imagah6me94dugrs.jpeg?q=70\",\r\n        \"brand\": \"ALY JOHN\",\r\n        \"title\": \"Men Solid Pure Cotton Straight Kurta\",\r\n        \"color\": \"Maroon\",\r\n        \"discountedPrice\": 478,\r\n        \"price\": 1279,\r\n        \"discountPersent\": 62,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/6/y/v/m-sksh-dt1105-black-fubar-original-imag4cpwzmhbufg4-bb.jpeg?q=70\",\r\n        \"brand\": \"FUBAR\",\r\n        \"title\": \"Men Striped Cotton Blend Straight Kurta\",\r\n        \"color\": \"Black\",\r\n        \"discountedPrice\": 399,\r\n        \"price\": 1648,\r\n        \"discountPersent\": 75,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/l3khsi80/kurta/1/c/6/l-mtml0042-328-manthan-original-imagenvzkm3v9vxh.jpeg?q=70\",\r\n        \"brand\": \"Manthan\",\r\n        \"title\": \"Men Printed Cotton Blend Ethnic Dress\",\r\n        \"color\": \"Orange\",\r\n        \"discountedPrice\": 948,\r\n        \"price\": 1299,\r\n        \"discountPersent\": 27,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/s/w/c/xl-vlmk-combzip02-vida-loca-original-imagkc4hhm4fxhjb.jpeg?q=70\",\r\n        \"brand\": \"Vida Loca\",\r\n        \"title\": \"Pack of 2 Men Solid Pure Cotton Straight Kurta\",\r\n        \"color\": \"Multicolor\",\r\n        \"discountedPrice\": 994,\r\n        \"price\": 2499,\r\n        \"discountPersent\": 60,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/t/j/u/s-pink-kurta-lilen-spoque-original-imagnfkwk5gpfmzx.jpeg?q=70\",\r\n        \"brand\": \"SPOQUE\",\r\n        \"title\": \"Men Solid Pure Cotton Straight Kurta\",\r\n        \"color\": \"Pink\",\r\n        \"discountedPrice\": 362,\r\n        \"price\": 1499,\r\n        \"discountPersent\": 75,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    },\r\n    {\r\n        \"imageUrl\": \"https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/x/f/6/xxl-new-white-nofilter-original-imaghzggudfezpr8.jpeg?q=70\",\r\n        \"brand\": \"Nofilter\",\r\n        \"title\": \"Men Solid Pure Cotton Straight Kurta\",\r\n        \"color\": \"White\",\r\n        \"discountedPrice\": 393,\r\n        \"price\": 1599,\r\n        \"discountPersent\": 75,\r\n        \"size\": [\r\n            {\r\n              \"name\": \"S\",\r\n              \"quantity\": 20\r\n            },\r\n            {\r\n              \"name\": \"M\",\r\n              \"quantity\": 30\r\n            },\r\n            {\r\n              \"name\": \"L\",\r\n              \"quantity\": 50\r\n            }\r\n          ],\r\n          \"quantity\": 100,\r\n          \"topLavelCategory\": \"Men\",\r\n          \"secondLavelCategory\": \"Clothing\",\r\n          \"thirdLavelCategory\": \"mens_kurta\",\r\n          \"description\":\"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style.\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5454/api/admin/products/creates",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"admin",
+						"products",
+						"creates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE2ODQyMjg4ODIsImV4cCI6MTY4NDMxNTI4MiwiZW1haWwiOiJ2YWtocmFuQGdtYWlsLmNvbSJ9.QWj3zrCAqqf5zVTtkVmQB11FajyjRMOJuNnxQHcJiyA7ny21dB0I9_itErNIsxp-",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5454/api/admin/orders/2/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"admin",
+						"orders",
+						"2",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create multiple products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE2ODQyMjg4ODIsImV4cCI6MTY4NDMxNTI4MiwiZW1haWwiOiJ2YWtocmFuQGdtYWlsLmNvbSJ9.QWj3zrCAqqf5zVTtkVmQB11FajyjRMOJuNnxQHcJiyA7ny21dB0I9_itErNIsxp-",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5454/api/admin/products/creates",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"admin",
+						"products",
+						"creates"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
